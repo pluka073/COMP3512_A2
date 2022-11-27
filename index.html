@@ -1,5 +1,73 @@
 <html>
 <body>
     Lukas Priebe 201428073
+
+<h1>Browse/Search Page</h1>
+
+    echo "<table>
+  <tr>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>Genre</th>
+     <th></th>
+    <th>Year</th>
+    <th></th>
+    <th>Popularity</th>
+    </tr>
+    </table>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>The Song</title>
+    <meta charset=utf-8>
+    <link rel=stylesheet href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    </head>
+    <body>
+        <main>
+            <header class=""> <a href="TheSong.php">Spotify Song </a>|<a href='SearchPage.php'> Search </a>|
+            <a href="index.php">Home</a> <a href="FavoritesPage.php"> | Favorites</a></header>
+    <section>
+        <form method="post" >
+
+          <div class="field">
+            
+          
+          </div>   
+            <a href="BrowsePage.php">
+             <button  type="button" name="search">
+               Show All 
+          </button>
+            </a>
+            
+            <!--<a href='TheSong.php?song_id='>
+            <button class="small ui blue button" type="button">
+              <i class="filter icon"></i> View 
+                </button></a>-->
+             
+        </form>
+    </section>
+    <section>
+        <?php
+        if(isset($_GET['title'], $_GET['artist'], $_GET['genre'], $_GET['year'], $_GET['pop'])){
+            if(count($songs) > 0) {
+                outputSongs($songs);
+            }
+            else {
+                echo "Error Not Found ". $_GET['title'];
+            }
+        }
+        else {
+            outputSongs($all_songs);;
+        }
+        ?>
+        
+        </section>
+        </main>
+        <footer>COMP 3512, &copy; Lukas Priebe, <a href="https://github.com/pluka073/COMP3521-A1.git">GitHub Repo Link</a></footer>
+    
     </body>
 </html>
