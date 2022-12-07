@@ -1,0 +1,26 @@
+body {
+   font-family: Open Sans, sans-serif;
+   background-color: #E6DDDE;
+   display: flex;
+   align-items: center;    
+   justify-content: center;
+}
+
+.container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   min-height: 10em;
+   margin-top: 2em;
+}
+
+.box {
+   max-width: 100%;
+   background-color: white;
+   padding: 0.5em;
+   box-shadow: 6px 5px 20px 1px rgba(0,0,0,0.22);
+}
+
+li {
+   list-style: none;
+}

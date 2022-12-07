@@ -1,72 +1,93 @@
-<html>
-<body>
-    Lukas Priebe 201428073
-
-<h1>Browse/Search Page</h1>
-
-    echo "<table>
-  <tr>
-    <th>Title</th>
-    <th>Artist</th>
-    <th>Genre</th>
-     <th></th>
-    <th>Year</th>
-    <th></th>
-    <th>Popularity</th>
-    </tr>
-    </table>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>The Song</title>
     <meta charset=utf-8>
-    <link rel=stylesheet href="style.css">
+   
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="starting-files/artists.json"></script>
+    <script src="starting-files/genres.json"></script>
+    <script src="starting-files/sample-songs.json">
+    </script>
+    <script src="starting-files/songs.js" type="module"></script>
+    <script src="starting-files/assign2.js" type="module"></script>
     </head>
+    
     <body>
-        <main>
-            <header class=""> <a href="TheSong.php">Spotify Song </a>|<a href='SearchPage.php'> Search </a>|
-            <a href="index.php">Home</a> <a href="FavoritesPage.php"> | Favorites</a></header>
-    <section>
-        <form method="post" >
-
-          <div class="field">
-            
-          
-          </div>   
-            <a href="BrowsePage.php">
-             <button  type="button" name="search">
-               Show All 
-          </button>
-            </a>
-            
-            <!--<a href='TheSong.php?song_id='>
-            <button class="small ui blue button" type="button">
-              <i class="filter icon"></i> View 
-                </button></a>-->
-             
-        </form>
-    </section>
-    <section>
-        <?php
-        if(isset($_GET['title'], $_GET['artist'], $_GET['genre'], $_GET['year'], $_GET['pop'])){
-            if(count($songs) > 0) {
-                outputSongs($songs);
-            }
-            else {
-                echo "Error Not Found ". $_GET['title'];
-            }
-        }
-        else {
-            outputSongs($all_songs);;
-        }
-        ?>
+    Lukas Priebe 201428073
+    <main class="container">
+        <div id="searchSong">
+        </div>
+        <div id="display"></div>
+       <nav> 
+ <h1>Basic Song Search</h1>
+          <table id="form">
+              <tr><td>
+              <input type="radio" id="t" name="rdbtn" value="title">
+            <label for="title">Find by title: </label>
+            <input type="text" id="title" class="search" >
+                  
+                  </td></tr>
+              <tr><td>
+              <input type="radio" id="a" value="artist" name="rdbtn" >
+              <label for="artist">Find by artist: </label>
+              
+              <select id="artist" class="search">
+                  <option> </option>
+                
+        </select>
+                  </td>
+                  </tr><tr>
+              <td>
+              
+        <input type="radio" id="g" name="rdbtn" value="genre">
+              <label for="genre">Find by genre: </label>
+                  
+              <select id="genre" > <option> </option>   </select>
+                  
+                  </td>
+              </tr>
+              <tr><td>    <button id="searchBtn">search me</button>
+</td></tr>
+              
+            </table>
+        </nav>
         
-        </section>
+<div class="box">
+<h1>Browse/Search Page</h1>
+<table id="row">
+    <tr>
+    <th>Title</th>
+    <th>Artist</th>
+    <th>Genre</th>
+    <th>Year</th>
+    <th>Popularity</th>
+    <th>Add</th>
+    </tr>
+    
+</table>
+
+    
+        </div>
+        
+        <div class="singleSong">
+        <table>
+            <tr><th>Song View</th>
+            <th>Radar View</th></tr>
+            <tr>
+               <td id="songView"></td> 
+                <td id="radarView"></td>
+            
+            </tr>
+           
+            
+        </table>
+        
+        </div>
         </main>
+
+        
+
         <footer>COMP 3512, &copy; Lukas Priebe, <a href="https://github.com/pluka073/COMP3521-A1.git">GitHub Repo Link</a></footer>
     
     </body>
