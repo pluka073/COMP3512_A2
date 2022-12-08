@@ -5,21 +5,25 @@
     <meta charset=utf-8>
    
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="starting-files/index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.3/Chart.min.js"></script>
     <script src="starting-files/artists.json"></script>
     <script src="starting-files/genres.json"></script>
     <script src="starting-files/sample-songs.json">
     </script>
-    <script src="starting-files/songs.js" type="module"></script>
     <script src="starting-files/assign2.js" type="module"></script>
+    
     </head>
     
     <body>
     Lukas Priebe 201428073
     <main class="container">
-        <div id="searchSong">
-        </div>
-        <div id="display"></div>
-       <nav> 
+        <header> <button id="credits">Credits</button>
+        <button id="playlist">Playlist</button>
+        <button id="close" visibility = "hidden">Close View</button></header>
+
+        <div id="display">
+       <nav id="searchBar"> 
  <h1>Basic Song Search</h1>
           <table id="form">
               <tr><td>
@@ -53,7 +57,7 @@
             </table>
         </nav>
         
-<div class="box">
+<section class="box">
 <h1>Browse/Search Page</h1>
 <table id="row">
     <tr>
@@ -68,21 +72,35 @@
 </table>
 
     
+        </section>
         </div>
         
-        <div class="singleSong">
+        <div class="singleSong" id="singleSong">
         <table>
             <tr><th>Song View</th>
+                
+                
             <th>Radar View</th></tr>
-            <tr>
-               <td id="songView"></td> 
-                <td id="radarView"></td>
             
-            </tr>
-           
+            <tr>
+            <td id="songDescription"></td>
+           <td>
+            
+            <canvas id="radarChart" width={this.state.canvasWidth} height={this.state.canvasHeight}></canvas></td>
+                </tr>
             
         </table>
         
+        </div>
+        
+        <div id="playlistView">
+            <h1>Playlist Details <button id='clearPlaylist'>Clear Playlist</button></h1>
+            
+            <table id="pRow">
+            <tr>
+                
+            </tr>
+            </table>
         </div>
         </main>
 
