@@ -352,6 +352,16 @@ document.querySelectorAll('#viewSong, a').forEach((element) =>{element.addEventL
             //viewPlaylist();
         });
         
+        document.getElementById('credits').addEventListener('click', function(e) {
+                const a = document.createElement('a');
+                const link = document.createTextNode('github');
+                a.appendChild(link);
+                a.title = 'github';
+                a.href = "https://github.com/pluka073/COMP3521-A1.git";
+           
+             window.alert("lukas\n\n" + a);   
+            });
+        
         document.getElementById('close').addEventListener('click', function(e) {
                 
                 document.getElementById('display').style.display = 'block';
@@ -361,19 +371,9 @@ document.querySelectorAll('#viewSong, a').forEach((element) =>{element.addEventL
     document.getElementById('playlistView').style.display = 'none';
             });
         
-        document.getElementById('credit').addEventListener('click', function(e) {
-                
-                window.alert("by: lukas priebe"
-            const a = document.createElement('a');
-                const link = document.createTextNode('github');
-                a.appendChild(link);
-                a.title = 'github';
-                a.href = "https://github.com/pluka073/COMP3521-A1.git";
-                a.setAttribute('id', 'refSong');
-                a.setAttribute('value', p.song_id);
-        )
-                
-            });
+        
+        
+        
         
         
         function addThead(table){
