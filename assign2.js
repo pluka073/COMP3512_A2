@@ -4,7 +4,7 @@ document.getElementById('singleSong').style.display = 'none';
     document.getElementById('playlistView').style.display = 'none';
 /* url of song api --- https versions hopefully a little later this semester */
 
-const api = 'http://www.randyconnolly.com/funwebdev/3rd/api/music/songs-nested.php';
+const api = 'https://www.randyconnolly.com/funwebdev/3rd/api/music/songs-nested.php';
 
     
     fetch(api)
